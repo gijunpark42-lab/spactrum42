@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg text-ink antialiased;
+    /* Tabular numerals everywhere so figures line up in the terminal-style tables. */
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Thin, restrained scrollbars for the terminal feel. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2c3947 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #2c3947;
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  /* Monospace + tabular figures for any hard number. */
+  .num {
+    @apply font-mono tabular-nums;
+  }
+}
